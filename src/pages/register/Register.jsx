@@ -27,7 +27,7 @@ const Register = () => {
         const registeredUser = result.user;
         setSuccess("Registration Successful.");
         // Reset registration form after successful registration
-        updateProfile(registeredUser, name, photo);
+        updateUserInfo(registeredUser, name, photo);
         form.reset();
       })
 
@@ -36,9 +36,7 @@ const Register = () => {
 
   const updateUserInfo = (registeredUser, name, photo) => {
     updateProfile(registeredUser, { displayName: name, photoURL: photo })
-      .then(() => {
-        setSuccess("Profile updated");
-      })
+      .then(() => {})
       .catch((error) => setError(error.message));
   };
 

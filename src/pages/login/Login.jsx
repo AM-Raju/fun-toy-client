@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
+  const { login } = useContext(AuthContext);
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
   const { signInWithGoogle } = useContext(AuthContext);
@@ -15,6 +16,18 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password, "Nepal");
+
+    setSuccess("");
+    setError("");
+
+    login(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser, "China");
+        setSuccess("Login successful");
+        form.reset();
+      })
+      .catch((error) => setError(error.message));
   };
 
   const handleGoogleLogin = () => {
