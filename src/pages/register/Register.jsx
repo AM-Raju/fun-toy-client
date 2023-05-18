@@ -1,9 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -15,15 +18,28 @@ const Register = () => {
     const password = form.password.value;
     console.log(name, photo, email, password, "Bangladesh");
 
+    // Clear success and error message before register another one
+    setError("");
+    setSuccess("");
+
     createUser(email, password)
       .then((result) => {
         const registeredUser = result.user;
-        alert("Registration ok");
+        setSuccess("Registration Successful.");
         // Reset registration form after successful registration
+        updateProfile(registeredUser, name, photo);
         form.reset();
       })
 
-      .catch((error) => console.log(error.message));
+      .catch((error) => setError(error.message));
+  };
+
+  const updateUserInfo = (registeredUser, name, photo) => {
+    updateProfile(registeredUser, { displayName: name, photoURL: photo })
+      .then(() => {
+        setSuccess("Profile updated");
+      })
+      .catch((error) => setError(error.message));
   };
 
   return (
@@ -70,6 +86,8 @@ const Register = () => {
           </Link>{" "}
           here.
         </p>
+        <p className="pl-16 text-blue-500">{success}</p>
+        <p className="pl-16 text-red-500">{error}</p>
       </div>
     </div>
   );
