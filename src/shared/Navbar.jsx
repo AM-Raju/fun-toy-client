@@ -50,7 +50,7 @@ const Navbar = () => {
                 </li>
 
                 <li className="hover:text-[#FE7288] hover:border-l-2 px-5 h-8 border-[#FE7288]">
-                  <Link>Register</Link>
+                  <Link to="/register">Register</Link>
                 </li>
               </ul>
             </div>
