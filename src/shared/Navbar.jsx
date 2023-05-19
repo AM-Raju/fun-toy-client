@@ -30,7 +30,7 @@ const Navbar = () => {
                 My Toys
               </li>
               <li className="h-14 text-xl font-mali px-6 py-3 hover:border-b-2 border-[#FE7288] duration-100  inline-block">
-                Add a Toy
+                <Link to="add-a-toy">Add a Toy</Link>
               </li>
 
               <li className="h-14 text-xl font-mali px-6 py-3 hover:border-b-2 border-[#FE7288] duration-100  inline-block">
