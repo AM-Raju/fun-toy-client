@@ -24,7 +24,7 @@ const Navbar = () => {
                 <Link to="/">Home</Link>
               </li>
               <li className="h-14 text-xl font-mali px-6 py-3 hover:border-b-2 border-[#FE7288] duration-100  inline-block">
-                All Toys
+                <Link to="/all-toys">All Toys</Link>
               </li>
               <li className="h-14 text-xl font-mali px-6 py-3 hover:border-b-2 border-[#FE7288] duration-100  inline-block">
                 My Toys
