@@ -1,7 +1,12 @@
 import React from "react";
+import Banner from "./Banner";
 
 const Home = () => {
-  return <div className="font-mali text-2xl font-semibold">This is home page</div>;
+  return (
+    <div>
+      <Banner></Banner>
+    </div>
+  );
 };
 
 export default Home;
