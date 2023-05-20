@@ -27,14 +27,14 @@ const Navbar = () => {
                 <Link to="/all-toys">All Toys</Link>
               </li>
               <li className="h-14 text-xl font-mali px-6 py-3 hover:border-b-2 border-[#FE7288] duration-100  inline-block">
-                My Toys
+                <Link to="my-toys">My Toys</Link>
               </li>
               <li className="h-14 text-xl font-mali px-6 py-3 hover:border-b-2 border-[#FE7288] duration-100  inline-block">
                 <Link to="add-a-toy">Add a Toy</Link>
               </li>
 
               <li className="h-14 text-xl font-mali px-6 py-3 hover:border-b-2 border-[#FE7288] duration-100  inline-block">
-                Blog
+                <Link to="/blog">Blog</Link>
               </li>
             </ul>
           </div>

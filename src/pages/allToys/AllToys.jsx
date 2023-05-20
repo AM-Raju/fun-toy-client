@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import bg from "../../assets/bg1.jpg";
-import { useLoaderData } from "react-router-dom";
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
