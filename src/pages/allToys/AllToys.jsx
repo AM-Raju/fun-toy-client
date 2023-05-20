@@ -6,13 +6,13 @@ const AllToys = () => {
   const [message, setMessage] = useState("");
   const [searchText, setSearchText] = useState("");
   useEffect(() => {
-    fetch("http://localhost:5000/all-toys")
+    fetch("https://fun-toy-server.vercel.app/all-toys")
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/all-toys/${searchText}`)
+    fetch(`https://fun-toy-server.vercel.app/all-toys/${searchText}`)
       .then((res) => res.json())
       .then((data) => setToys(data))
       .catch((error) => console.log(error.message));
