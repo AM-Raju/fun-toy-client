@@ -16,10 +16,10 @@ const ShopByCategory = () => {
   };
   return (
     <div>
-      <div className="w-[1440px] mx-auto my-10">
+      <div className=" max-w-[1440px] mx-auto my-10">
         <h3 className="text-center font-semibold text-3xl font-mali mb-8">Shop By Category</h3>
 
-        <div className="grid grid-cols-3 text-xl font-semibold">
+        <div className="grid md:grid-cols-3 text-xl font-semibold">
           <button
             onClick={() => {
               handleTabClick("dogRobot");
@@ -51,7 +51,7 @@ const ShopByCategory = () => {
             Baby's Robot Toy
           </button>
         </div>
-        <div className="grid grid-cols-4 grid-rows-3 justify-between gap-3 border-[#FE7288] border-l-2 border-r-2 border-b-2 ">
+        <div className="grid md:grid-cols-4 md:grid-rows-3 justify-between gap-3 border-[#FE7288] border-l-2 border-r-2 border-b-2 ">
           {/* block */}
           {toys.map((toy) => (
             <ToyCard key={toy._id} toy={toy}></ToyCard>

@@ -4,9 +4,9 @@ import { FaHeadset, FaRegIdBadge, FaRegMoneyBillAlt, FaShippingFast } from "reac
 const Service = () => {
   return (
     <div>
-      <div className="w-[1440px] mx-auto border-t-2 border-b-2 my-10 flex justify-around">
+      <div className=" max-w-[1440px] mx-auto border-t-2 border-b-2 my-10 md:flex justify-around px-16 md:px-0">
         {/* Block */}
-        <div className="flex items-center gap-6 my-10 border-black border-r-2 pr-20">
+        <div className="flex items-center gap-6 my-10 border-black md:border-r-2 pr-20">
           <FaShippingFast className="text-5xl"></FaShippingFast>
           <div>
             <h4 className="text-xl font-semibold">Free Delivery</h4>
@@ -14,7 +14,7 @@ const Service = () => {
           </div>
         </div>
         {/* Block */}
-        <div className="flex items-center gap-6 my-10 border-black border-r-2 pr-20">
+        <div className="flex items-center gap-6 my-10 border-black md:border-r-2 pr-20">
           <FaRegMoneyBillAlt className="text-5xl"></FaRegMoneyBillAlt>
           <div>
             <h4 className="text-xl font-semibold">Return and Refund</h4>
@@ -22,7 +22,7 @@ const Service = () => {
           </div>
         </div>
         {/* Block */}
-        <div className="flex items-center gap-6 my-10 border-black border-r-2 pr-20">
+        <div className="flex items-center gap-6 my-10 border-black md:border-r-2 pr-20">
           <FaRegIdBadge className="text-5xl"></FaRegIdBadge>
           <div>
             <h4 className="text-xl font-semibold">Member Discount</h4>

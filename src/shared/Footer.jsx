@@ -4,8 +4,8 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer>
-      <div className="bg-[#022c49] text-white py-10 space-y-8">
+    <footer className="">
+      <div className=" bg-[#022c49] text-white py-10 space-y-8">
         <div className="space-y-3 text-center">
           <img className="w-fit mx-auto" src={footerLogo} alt="" />
           <h3 className="font-semibold text-2xl font-mali">KID's Toys Industries Ltd</h3>
@@ -19,7 +19,7 @@ const Footer = () => {
         </div>
       </div>
       <div className=" border-t-2 w-full bg-[#011625] text-white">
-        <div className="max-w-[1440px] mx-auto flex justify-between items-center h-14">
+        <div className="max-w-[1440px] mx-auto md:flex justify-between items-center h-14">
           <p>Copyright © 2023 - All right reserved</p>
           <ul className="flex gap-5">
             <li>About Us</li>
