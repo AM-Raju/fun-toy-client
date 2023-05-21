@@ -2,13 +2,16 @@ import React, { useContext } from "react";
 import navLogo from "../assets/logos/nav-logo.png";
 import { FaInstagram, FaRegUser, FaShoppingBag, FaShoppingBasket } from "react-icons/fa";
 import Marquee from "react-fast-marquee";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 
 const Navbar = () => {
   const { logOut, user } = useContext(AuthContext);
+  const navigate = useNavigate();
   const handleSignOut = () => {
-    logOut();
+    logOut().then(() => {
+      navigate("/");
+    });
   };
 
   return (
@@ -22,20 +25,42 @@ const Navbar = () => {
             <div className="text-center font-semibold">
               <ul>
                 <li className="h-14 text-xl font-mali py-3 hover:border-b-2 border-[#FE7288] duration-100  inline-block">
-                  <Link to="/">Home</Link>
+                  <NavLink to="/" className={({ isActive }) => (isActive ? "text-[#FE7288]" : "")}>
+                    Home
+                  </NavLink>
                 </li>
                 <li className="h-14 text-xl font-mali px-6 py-3 hover:border-b-2 border-[#FE7288] duration-100  inline-block">
-                  <Link to="/all-toys">All Toys</Link>
+                  <NavLink
+                    to="/all-toys"
+                    className={({ isActive }) => (isActive ? "text-[#FE7288]" : "")}
+                  >
+                    All Toys
+                  </NavLink>
                 </li>
                 <li className="h-14 text-xl font-mali px-6 py-3 hover:border-b-2 border-[#FE7288] duration-100  inline-block">
-                  <Link to="/my-toys">My Toys</Link>
+                  <NavLink
+                    to="/my-toys"
+                    className={({ isActive }) => (isActive ? "text-[#FE7288]" : "")}
+                  >
+                    My Toys
+                  </NavLink>
                 </li>
                 <li className="h-14 text-xl font-mali px-6 py-3 hover:border-b-2 border-[#FE7288] duration-100  inline-block">
-                  <Link to="/add-a-toy">Add a Toy</Link>
+                  <NavLink
+                    to="/add-a-toy"
+                    className={({ isActive }) => (isActive ? "text-[#FE7288]" : "")}
+                  >
+                    Add a Toy
+                  </NavLink>
                 </li>
 
                 <li className="h-14 text-xl font-mali px-6 py-3 hover:border-b-2 border-[#FE7288] duration-100  inline-block">
-                  <Link to="/blog">Blog</Link>
+                  <NavLink
+                    to="/blog"
+                    className={({ isActive }) => (isActive ? "text-[#FE7288]" : "")}
+                  >
+                    Blog
+                  </NavLink>
                 </li>
               </ul>
             </div>
