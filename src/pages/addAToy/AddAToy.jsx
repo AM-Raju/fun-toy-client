@@ -94,11 +94,11 @@ const AddAToy = () => {
               <br />
               <select className="w-full mt-3 p-3 rounded-md outline-none" name="category">
                 <option value="">Select Category</option>
-                <option value="Dog Robot Toy">Dog Robot Toy</option>
-                <option value="Transformer Robot Toy">Transformer Robot Toy</option>
-                <option value="General Robot Toy">General Robot Toy</option>
-                <option value="Baby's Toy">Baby's Toy</option>
-                <option value="Cartoon Robot">Cartoon Robot</option>
+                <option value="dogRobot">Dog Robot Toy</option>
+                <option value="transformersRobot">Transformer Robot Toy</option>
+                <option value="GeneralRobot">General Robot Toy</option>
+                <option value="babysRobot">Baby's Toy</option>
+                <option value="cartoonRobot">Cartoon Robot</option>
               </select>
             </div>
           </div>
