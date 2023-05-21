@@ -24,7 +24,6 @@ const Login = () => {
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password, "Nepal");
 
     setSuccess("");
     setError("");
@@ -32,7 +31,7 @@ const Login = () => {
     login(email, password)
       .then((result) => {
         const loggedUser = result.user;
-        console.log(loggedUser, "China");
+
         setSuccess("Login successful");
         form.reset();
         // return to current location after login from private route

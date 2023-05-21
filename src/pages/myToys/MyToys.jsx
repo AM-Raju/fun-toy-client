@@ -15,6 +15,22 @@ const MyToys = () => {
       .then((data) => setToys(data));
   }, [user]);
 
+  const handleDelete = (id) => {
+    const proceed = confirm("Are you want to delete it?");
+    if (proceed) {
+      fetch(`https://fun-toy-server.vercel.app/all-toys/${id}`, { method: "DELETE" })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.deletedCount > 0) {
+            alert("Deleted successful");
+            const remaining = toys.filter((toy) => toy._id !== id);
+            setToys(remaining);
+          }
+        });
+    }
+  };
+
   return (
     <div>
       <div style={{ backgroundImage: `url(${bg})` }}>
@@ -52,7 +68,14 @@ const MyToys = () => {
                     <button className="bg-[#FE7288] py-2 px-5 rounded font-semibold">Edit</button>
                   </td>
                   <td className="border-r-2 border-blue-100 py-2 text-center">
-                    <button className="bg-[#FE7288] py-2 px-5 rounded font-semibold">Delete</button>
+                    <button
+                      onClick={() => {
+                        handleDelete(toy?._id);
+                      }}
+                      className="bg-[#FE7288] py-2 px-5 rounded font-semibold"
+                    >
+                      Delete
+                    </button>
                   </td>
                 </tr>
               ))}

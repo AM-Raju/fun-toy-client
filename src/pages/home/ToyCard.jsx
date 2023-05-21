@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const ToyCard = ({ toy }) => {
   const { _id, name, email, title, category, image, price, rating, quantity, description } =
     toy || {};
-  console.log(title, "bidehs");
+
   return (
     <div className=" border-2 p-5">
       <div className="relative group w-[308px]">
@@ -18,7 +18,7 @@ const ToyCard = ({ toy }) => {
             </Link>
           </div>
         </div>
-        <img className="w-[354px] h-96" src={image} alt="" />
+        <img className="w-[345px] h-96" src={image} alt="" />
       </div>
     </div>
   );

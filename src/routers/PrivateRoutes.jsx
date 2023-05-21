@@ -12,9 +12,12 @@ const PrivateRoutes = ({ children }) => {
     return <p>Loading......</p>;
   }
 
-  if (user) {
+  if (!user) {
+    alert("You have to login to visit this page");
+  } else {
     return children;
   }
+
   return <Navigate to="/login" state={{ from: location }} replace={true}></Navigate>;
 };
 

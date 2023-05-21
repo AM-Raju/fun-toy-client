@@ -5,7 +5,6 @@ const ToyDetails = () => {
   const toy = useLoaderData();
   const { name, email, title, category, image, price, rating, quantity, description } = toy;
 
-  console.log(toy, "Korea");
   return (
     <div>
       <div className="w-[1440px] mx-auto">

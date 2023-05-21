@@ -18,7 +18,6 @@ const Register = () => {
     const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(name, photo, email, password, "Bangladesh");
 
     // Clear success and error message before register another one
     setError("");

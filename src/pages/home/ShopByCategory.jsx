@@ -51,7 +51,7 @@ const ShopByCategory = () => {
             Baby's Robot Toy
           </button>
         </div>
-        <div className="flex flex-wrap justify-around gap-3 border-[#FE7288] border-l-2 border-r-2 border-b-2 ">
+        <div className="grid grid-cols-4 grid-rows-3 justify-between gap-3 border-[#FE7288] border-l-2 border-r-2 border-b-2 ">
           {/* block */}
           {toys.map((toy) => (
             <ToyCard key={toy._id} toy={toy}></ToyCard>

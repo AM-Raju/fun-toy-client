@@ -20,7 +20,7 @@ const AddAToy = () => {
 
     const quantity = form.quantity.value;
     const description = form.description.value;
-    console.log(name, email, title, category, image, price, rating, quantity, description, "India");
+
     const toyInfo = { name, email, title, category, image, price, rating, quantity, description };
 
     fetch("https://fun-toy-server.vercel.app/all-toys", {
