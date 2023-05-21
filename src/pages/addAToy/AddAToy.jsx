@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import useTitle from "../../hooks/useTitle";
 
 const AddAToy = () => {
+  useTitle("Kid's Toy | Add a Toy");
   const { user } = useContext(AuthContext);
   const handleToyData = (event) => {
     event.preventDefault();
@@ -21,7 +23,7 @@ const AddAToy = () => {
     console.log(name, email, title, category, image, price, rating, quantity, description, "India");
     const toyInfo = { name, email, title, category, image, price, rating, quantity, description };
 
-    fetch("http://localhost:5000/all-toys", {
+    fetch("https://fun-toy-server.vercel.app/all-toys", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(toyInfo),

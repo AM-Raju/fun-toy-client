@@ -42,12 +42,13 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/toy-details",
+        path: "/toy-details/:id",
         element: (
           <PrivateRoutes>
             <ToyDetails></ToyDetails>
           </PrivateRoutes>
         ),
+        loader: ({ params }) => fetch(`https://fun-toy-server.vercel.app/toyDetails/${params.id}`),
       },
       {
         path: "/blog",

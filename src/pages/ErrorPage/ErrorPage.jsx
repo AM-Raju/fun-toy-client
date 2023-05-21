@@ -1,8 +1,10 @@
 import React from "react";
 import { Link, useRouteError } from "react-router-dom";
 import errorBg from "../../assets/errorBg.jpg";
+import useTitle from "../../hooks/useTitle";
 
 const ErrorPage = () => {
+  useTitle("Kid's Toy | 404");
   const { error, status } = useRouteError();
   return (
     <section

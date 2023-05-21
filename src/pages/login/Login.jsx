@@ -2,11 +2,15 @@ import React, { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import useTitle from "../../hooks/useTitle";
 
 const Login = () => {
   const { login, signInWithGoogle } = useContext(AuthContext);
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
+
+  // Dynamic title setting
+  useTitle("Kid's Toy | login");
 
   // Used to navigate after login from private route
   const location = useLocation();

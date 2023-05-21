@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import bg from "../../assets/bg1.jpg";
 import Navbar from "../../shared/Navbar";
+import { Link } from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
 
 const AllToys = () => {
+  useTitle("Kid's Toy | All Toys");
   const [toys, setToys] = useState([]);
   const [message, setMessage] = useState("");
   const [searchText, setSearchText] = useState("");
@@ -64,9 +67,11 @@ const AllToys = () => {
                   <td className="border-r-2 border-blue-100 py-2 pl-5">{toy.quantity} Pcs</td>
                   <td className="border-r-2 border-blue-100 py-2 pl-5">{toy.rating}</td>
                   <td className="border-r-2 border-blue-100 py-2 text-center">
-                    <button className="bg-[#FE7288] py-2 px-5 rounded font-semibold">
-                      Details
-                    </button>
+                    <Link to={`/toy-details/${toy._id}`}>
+                      <button className="bg-[#FE7288] py-2 px-5 rounded font-semibold">
+                        Details
+                      </button>
+                    </Link>
                   </td>
                 </tr>
               ))}

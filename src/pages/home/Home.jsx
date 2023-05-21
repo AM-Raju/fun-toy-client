@@ -5,8 +5,10 @@ import Quote from "./Quote";
 import Service from "./Service";
 import ShopByCategory from "./ShopByCategory";
 import Navbar from "../../shared/Navbar";
+import useTitle from "../../hooks/useTitle";
 
 const Home = () => {
+  useTitle("Kid's Toy | Home");
   return (
     <div>
       <Banner></Banner>

@@ -1,7 +1,9 @@
 import React from "react";
 import bg from "../../assets/bg3.jpg";
+import useTitle from "../../hooks/useTitle";
 
 const Blog = () => {
+  useTitle("Kid's Toy | Blog");
   return (
     <div>
       <div style={{ backgroundImage: `url(${bg})` }} className="bg-cover">

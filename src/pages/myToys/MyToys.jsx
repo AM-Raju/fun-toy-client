@@ -1,16 +1,19 @@
 import React, { useContext, useEffect, useState } from "react";
 import bg from "../../assets/bg2.jpg";
 import { AuthContext } from "../../providers/AuthProvider";
+import useTitle from "../../hooks/useTitle";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
 
+  useTitle("Kid's Toy | My Toys");
+
   const [toys, setToys] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/my-toys/${user?.email}`)
+    fetch(`https://fun-toy-server.vercel.app/my-toys/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setToys(data));
-  }, []);
+  }, [user]);
 
   return (
     <div>
