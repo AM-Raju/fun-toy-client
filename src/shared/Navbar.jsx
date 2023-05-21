@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import navLogo from "../assets/logos/nav-logo.png";
 import { FaInstagram, FaRegUser, FaShoppingBag, FaShoppingBasket } from "react-icons/fa";
+import Marquee from "react-fast-marquee";
 import { Link } from "react-router-dom";
-import Login from "../pages/login/Login";
 import { AuthContext } from "../providers/AuthProvider";
 
 const Navbar = () => {
@@ -18,7 +18,7 @@ const Navbar = () => {
           <img src={navLogo} alt="" />
         </div>
         <div className="w-8/12 h-24">
-          <div className="text-center">
+          <div className="text-center font-semibold">
             <ul>
               <li className="h-14 text-xl font-mali px-6 py-3 hover:border-b-2 border-[#FE7288] duration-100  inline-block">
                 <Link to="/">Home</Link>
@@ -27,10 +27,10 @@ const Navbar = () => {
                 <Link to="/all-toys">All Toys</Link>
               </li>
               <li className="h-14 text-xl font-mali px-6 py-3 hover:border-b-2 border-[#FE7288] duration-100  inline-block">
-                <Link to="my-toys">My Toys</Link>
+                <Link to="/my-toys">My Toys</Link>
               </li>
               <li className="h-14 text-xl font-mali px-6 py-3 hover:border-b-2 border-[#FE7288] duration-100  inline-block">
-                <Link to="add-a-toy">Add a Toy</Link>
+                <Link to="/add-a-toy">Add a Toy</Link>
               </li>
 
               <li className="h-14 text-xl font-mali px-6 py-3 hover:border-b-2 border-[#FE7288] duration-100  inline-block">
@@ -40,7 +40,15 @@ const Navbar = () => {
           </div>
 
           <div>
-            <h3 className="text-center">Marquee here</h3>
+            <Marquee>
+              <p className="text-lg">
+                | “Making the decision to have a child is momentous. It is to decide forever to have
+                your heart go walking around outside your body.” —Elizabeth Stone || “Having a baby
+                is like falling in love again, both with your husband and your child.” —Tina Brown
+                || “Children have neither past nor future. They enjoy the present, which very few of
+                us do.” —Jean De La Bruyere |
+              </p>
+            </Marquee>
           </div>
         </div>
         <div className="w-2/12 h-24">

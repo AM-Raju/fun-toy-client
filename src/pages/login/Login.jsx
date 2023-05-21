@@ -1,13 +1,18 @@
 import React, { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
-  const { login } = useContext(AuthContext);
+  const { login, signInWithGoogle } = useContext(AuthContext);
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
-  const { signInWithGoogle } = useContext(AuthContext);
+
+  // Used to navigate after login from private route
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -26,6 +31,8 @@ const Login = () => {
         console.log(loggedUser, "China");
         setSuccess("Login successful");
         form.reset();
+        // return to current location after login from private route
+        navigate(from, { replace: true });
       })
       .catch((error) => setError(error.message));
   };
@@ -34,6 +41,8 @@ const Login = () => {
     signInWithGoogle()
       .then(() => {
         setSuccess("You successfully loggedIn with google");
+        // return to current location after login from private route
+        navigate(from, { replace: true });
       })
       .catch((error) => setError(error.message));
   };

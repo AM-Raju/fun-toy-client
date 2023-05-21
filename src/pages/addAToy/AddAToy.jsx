@@ -35,140 +35,142 @@ const AddAToy = () => {
       .catch((error) => console.log(error.message));
   };
   return (
-    <div className="bg-[#f7da5a]">
-      <div className="max-w-[1440px] mx-auto pb-16 pt-8">
-        <h3 className="text-4xl font-mali font-semibold text-center mb-10">Add a Toy</h3>
-        <form
-          onSubmit={handleToyData}
-          className=" space-y-6 border border-[#FE7288] w-8/12 mx-auto px-14 py-8 rounded-2xl"
-        >
-          {/* Username and Email block */}
-          <div className="grid grid-cols-2 gap-10">
-            <div>
-              <label className="text-xl" htmlFor="">
-                User name
-              </label>
-              <br />
-              <input
-                className="w-full mt-3 p-3 rounded-md outline-none"
-                type="name"
-                name="name"
-                defaultValue={user?.displayName}
-                placeholder="User Name"
-                disabled
-              />
+    <div>
+      <div className="bg-[#f7da5a]">
+        <div className="max-w-[1440px] mx-auto pb-16 pt-8">
+          <h3 className="text-4xl font-mali font-semibold text-center mb-10">Add a Toy</h3>
+          <form
+            onSubmit={handleToyData}
+            className=" space-y-6 border border-[#FE7288] w-8/12 mx-auto px-14 py-8 rounded-2xl"
+          >
+            {/* Username and Email block */}
+            <div className="grid grid-cols-2 gap-10">
+              <div>
+                <label className="text-xl" htmlFor="">
+                  User name
+                </label>
+                <br />
+                <input
+                  className="w-full mt-3 p-3 rounded-md outline-none"
+                  type="name"
+                  name="name"
+                  defaultValue={user?.displayName}
+                  placeholder="User Name"
+                  disabled
+                />
+              </div>
+              <div>
+                <label className="text-xl" htmlFor="">
+                  User email
+                </label>
+                <br />
+                <input
+                  className="w-full mt-3 p-3 rounded-md outline-none"
+                  type="email"
+                  name="email"
+                  defaultValue={user?.email}
+                  placeholder="User Email"
+                  disabled
+                />
+              </div>
             </div>
-            <div>
-              <label className="text-xl" htmlFor="">
-                User email
-              </label>
-              <br />
-              <input
-                className="w-full mt-3 p-3 rounded-md outline-none"
-                type="email"
-                name="email"
-                defaultValue={user?.email}
-                placeholder="User Email"
-                disabled
-              />
+            {/* Product Title and Category Block */}
+            <div className="grid grid-cols-2 gap-10">
+              <div>
+                <label className="text-xl" htmlFor="">
+                  Product Title
+                </label>
+                <br />
+                <input
+                  className="w-full mt-3 p-3 rounded-md outline-none"
+                  type="text"
+                  name="title"
+                  placeholder="Product Title"
+                />
+              </div>
+              <div>
+                <label className="text-xl" htmlFor="">
+                  Category
+                </label>
+                <br />
+                <select className="w-full mt-3 p-3 rounded-md outline-none" name="category">
+                  <option value="">Select Category</option>
+                  <option value="dogRobot">Dog Robot Toy</option>
+                  <option value="transformersRobot">Transformer Robot Toy</option>
+                  <option value="GeneralRobot">General Robot Toy</option>
+                  <option value="babysRobot">Baby's Toy</option>
+                  <option value="cartoonRobot">Cartoon Robot</option>
+                </select>
+              </div>
             </div>
-          </div>
-          {/* Product Title and Category Block */}
-          <div className="grid grid-cols-2 gap-10">
+            {/* Product Image block */}
             <div>
               <label className="text-xl" htmlFor="">
-                Product Title
-              </label>
-              <br />
-              <input
-                className="w-full mt-3 p-3 rounded-md outline-none"
-                type="text"
-                name="title"
-                placeholder="Product Title"
-              />
-            </div>
-            <div>
-              <label className="text-xl" htmlFor="">
-                Category
-              </label>
-              <br />
-              <select className="w-full mt-3 p-3 rounded-md outline-none" name="category">
-                <option value="">Select Category</option>
-                <option value="dogRobot">Dog Robot Toy</option>
-                <option value="transformersRobot">Transformer Robot Toy</option>
-                <option value="GeneralRobot">General Robot Toy</option>
-                <option value="babysRobot">Baby's Toy</option>
-                <option value="cartoonRobot">Cartoon Robot</option>
-              </select>
-            </div>
-          </div>
-          {/* Product Image block */}
-          <div>
-            <label className="text-xl" htmlFor="">
-              Product Image
-            </label>
-            <input
-              className="w-full mt-3 p-3 rounded-md outline-none"
-              type="text"
-              name="photo"
-              placeholder="Photo URL"
-            />
-          </div>
-          {/* Price Rating Qty Block */}
-          <div className="grid grid-cols-3 gap-10">
-            <div>
-              <label className="text-xl" htmlFor="">
-                Price
+                Product Image
               </label>
               <input
                 className="w-full mt-3 p-3 rounded-md outline-none"
                 type="text"
-                name="price"
-                placeholder="Price"
+                name="photo"
+                placeholder="Photo URL"
               />
+            </div>
+            {/* Price Rating Qty Block */}
+            <div className="grid grid-cols-3 gap-10">
+              <div>
+                <label className="text-xl" htmlFor="">
+                  Price
+                </label>
+                <input
+                  className="w-full mt-3 p-3 rounded-md outline-none"
+                  type="text"
+                  name="price"
+                  placeholder="Price"
+                />
+              </div>
+              <div>
+                <label className="text-xl" htmlFor="">
+                  Rating
+                </label>
+                <input
+                  className="w-full mt-3 p-3 rounded-md outline-none"
+                  type="text"
+                  name="rating"
+                  placeholder="Rating"
+                />
+              </div>
+              <div>
+                <label className="text-xl" htmlFor="">
+                  Quantity
+                </label>
+                <input
+                  className="w-full mt-3 p-3 rounded-md outline-none"
+                  type="number"
+                  name="quantity"
+                  placeholder="Available Qty"
+                />
+              </div>
             </div>
             <div>
-              <label className="text-xl" htmlFor="">
-                Rating
-              </label>
-              <input
-                className="w-full mt-3 p-3 rounded-md outline-none"
-                type="text"
-                name="rating"
-                placeholder="Rating"
-              />
+              <div className="form-control mb-6">
+                <label className="label">
+                  <span className="text-xl">Product Description</span>
+                </label>
+                <textarea
+                  className=" p-3 rounded-lg outline-none h-24 resize-none"
+                  name="description"
+                  placeholder="Product Description"
+                ></textarea>
+              </div>
             </div>
-            <div>
-              <label className="text-xl" htmlFor="">
-                Quantity
-              </label>
-              <input
-                className="w-full mt-3 p-3 rounded-md outline-none"
-                type="number"
-                name="quantity"
-                placeholder="Available Qty"
-              />
-            </div>
-          </div>
-          <div>
-            <div className="form-control mb-6">
-              <label className="label">
-                <span className="text-xl">Product Description</span>
-              </label>
-              <textarea
-                className=" p-3 rounded-lg outline-none h-24 resize-none"
-                name="description"
-                placeholder="Product Description"
-              ></textarea>
-            </div>
-          </div>
 
-          <input
-            className="w-full mx-auto p-3 bg-[#FE7288] text-xl font-semibold rounded-md outline-none"
-            type="submit"
-            value="Add Toy"
-          />
-        </form>
+            <input
+              className="w-full mx-auto p-3 bg-[#FE7288] text-xl font-semibold rounded-md outline-none"
+              type="submit"
+              value="Add Toy"
+            />
+          </form>
+        </div>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import ToyCard from "./ToyCard";
 
 const ShopByCategory = () => {
   const [toys, setToys] = useState([]);
-  const [activeTab, setActiveTab] = useState("babysRobot");
+  const [activeTab, setActiveTab] = useState("dfd");
   useEffect(() => {
     fetch(`http://localhost:5000/toys/${activeTab}`)
       .then((res) => res.json())

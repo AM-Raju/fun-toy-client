@@ -8,6 +8,8 @@ import AllToys from "../pages/allToys/AllToys";
 import MyToys from "../pages/myToys/MyToys";
 import Blog from "../pages/blog/Blog";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import ToyDetails from "../pages/ToyDetails/ToyDetails";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +23,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/add-a-toy",
-        element: <AddAToy></AddAToy>,
+        element: (
+          <PrivateRoutes>
+            <AddAToy></AddAToy>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/all-toys",
@@ -29,7 +35,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/my-toys",
-        element: <MyToys></MyToys>,
+        element: (
+          <PrivateRoutes>
+            <MyToys></MyToys>
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/toy-details",
+        element: (
+          <PrivateRoutes>
+            <ToyDetails></ToyDetails>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/blog",

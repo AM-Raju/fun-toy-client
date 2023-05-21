@@ -4,6 +4,7 @@ import Gallery from "./Gallery";
 import Quote from "./Quote";
 import Service from "./Service";
 import ShopByCategory from "./ShopByCategory";
+import Navbar from "../../shared/Navbar";
 
 const Home = () => {
   return (
